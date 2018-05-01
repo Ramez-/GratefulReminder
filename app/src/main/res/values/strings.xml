@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Gratefulness</string>
+    <string name="settings_name">Settings</string>
+    <string name="help_name">Need help</string>
+    <string name="showGratefulSentences">Check all sentences</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="question">What are you grateful for?</string>
+    <string name="title_activity_no_grateful_points_found">NoGratefulPointsFound</string>
+</resources>
