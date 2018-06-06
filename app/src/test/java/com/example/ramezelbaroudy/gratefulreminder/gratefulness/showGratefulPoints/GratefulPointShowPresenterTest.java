@@ -53,9 +53,6 @@ public class GratefulPointShowPresenterTest {
     public void shouldPassGratefulPointsToView() {
         // given
         // presenter care only about GratefulPointsView and doesn't care about who implments the view
-//        GratefulPointsView view = new MockView();
-//        GratefulPointsRepository repository = new MockGratefulPointRepository(true);
-
         // only when calling getGratefulPoints method then create a mock with one grratefulpoint in a list
         // just is for emitting the grateful point as we are mocking the getGratefulPoints when called
         when(repository.getGratefulPoints()).thenReturn(Single.just(gratefulPointList));
@@ -65,7 +62,6 @@ public class GratefulPointShowPresenterTest {
         presenter.loadGratefulPoints();
 
         //then
-//        Assert.assertEquals(true, ((MockView) view).displayGratefulPoints);
         verify(view).displayGratefulPoints(gratefulPointList);
     }
 
@@ -90,9 +86,9 @@ public class GratefulPointShowPresenterTest {
 
     @Test
     public void shouldDeleteGratefulPoint() {
-//        when(repository.deleteGratefulPoint()).thenReturn();
-//        presenter.deleteGratefulPoint(GratefulPoint gratefulPoint);
-//        verify(view).refreshView();
+        when(repository.deleteGratefulPoint("first sentence")).thenReturn(Single.just("Succed"));
+        presenter.deleteGratefulPoint("first sentence");
+        verify(view).refreshView();
     }
 
 }
