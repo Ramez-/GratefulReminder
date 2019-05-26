@@ -1,7 +1,5 @@
 package com.example.ramezelbaroudy.gratefulreminder.showGratefulPoints;
 
-import android.util.Log;
-
 import com.example.ramezelbaroudy.gratefulreminder.repositories.GratefulPointsRepository;
 import com.example.ramezelbaroudy.gratefulreminder.utils.GratefulPoint;
 
@@ -14,7 +12,6 @@ import io.reactivex.observers.DisposableSingleObserver;
 import io.reactivex.schedulers.Schedulers;
 
 public class GratefulPointShowPresenter {
-    private static final String TAG = "asfd";
     private final GratefulPointsRepository repository;
     private final GratefulPointShowView view;
     private final Scheduler mainScheduler;
@@ -26,7 +23,7 @@ public class GratefulPointShowPresenter {
         this.mainScheduler = mainScheduler;
     }
 
-    public void loadGratefulPoints() {
+        public void loadGratefulPoints() {
 
         compositeDisposable.add(repository.getGratefulPoints()
                 .subscribeOn(Schedulers.io())
